@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  keygen:
+    build:
+      context: contexts
+      dockerfile: ../Dockerfile
+    environment:
+      - "NAMES=frainc3:frainkit"
+    volumes:
+      - "./save/keys:/keys"
+      - "/tmp/ram:/workplace"
+    stop_grace_period: 1s
